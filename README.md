@@ -1,7 +1,7 @@
 # GitHub-Explorer
 
 - [x] Configurando ambiente ⚙️
-- [ ] Conceitos Importantes 📘
+- [x] Conceitos Importantes 📘
 - [ ] Chamadas HTTP 🗣
 - [ ] Usando Typescript 📘
 - [ ] Finalizando aplicação 🚚
@@ -16,13 +16,18 @@ $ yarn init -y
     ├── dist             
     ├── node_modules                   
     ├── public                   
-    ─├── src                   
-     ├── styles                  
-     ├── App.tsx
-     ├── Index.tsx
-     ├── package.json
-     ├── babel.config.js
-     └── webpack.config.js
+     ├── src
+      ├── components
+       ├── Counter.jsx
+       ├── RepositoryItem.jsx
+       ├── RepositoryList.jsx              
+      ├── styles
+        ├── global.scss                 
+      ├── App.tsx
+      ├── Index.tsx
+      ├── package.json
+      ├── babel.config.js
+      └── webpack.config.js
 
 #### Node Modules
 * Normais
@@ -96,10 +101,11 @@ Estipula uma série de 'loaders' para converter os arquivos a fim de deixar leg�
 ```javascript
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 const isDevelopment = process.env.NODE_ENV != 'production';
 module.exports = {
     mode: isDevelopment ? 'development' : 'production',
-    devtool: 'eval-source-map', //source map facilita a depuração do código
+    devtool: 'eval-source-map',
     entry: path.resolve(__dirname, 'src', 'index.jsx'),
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -110,18 +116,27 @@ module.exports = {
     },
     devServer: {
         contentBase: path.resolve(__dirname, 'public'),
+        hot: true
     },
     plugins: [
+        isDevelopment && new ReactRefreshWebpackPlugin(),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'public', 'index.html'),
         })
-    ],
+    ].filter(Boolean),
     module: {
         rules: [
             {
                 test: /\.jsx$/,
                 exclude: /node_modules/,
-                use: 'babel-loader'
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        plugins: [
+                            isDevelopment && require.resolve('react-refresh/babel'),
+                        ].filter(Boolean)
+                    }
+                }
             },
             {
                 test: /\.scss$/,
@@ -154,4 +169,3 @@ module.exports = {
  $ yarn dev 
  $ yarn build
  ```
-  
