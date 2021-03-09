@@ -10,15 +10,54 @@
 ```cmd
 $ yarn init -y
 ```
+
+#### 📂 Folders:   
+    .    
+    ├── dist             
+    ├── node_modules                   
+    ├── public                   
+    ─├── src                   
+     ├── styles                  
+     ├── App.tsx
+     ├── Index.tsx
+     ├── package.json
+     ├── babel.config.js
+     └── webpack.config.js
+
 #### Node Modules
 * Normais
  ```cmd
-$ yarn add react
-$ yarn add react-dom //Render the react elements
+$ yarn add __
 ```
 * Desenvolvimento (Não vai para a produção):
 ```cmd
-$ yarn add @babel/cli @babel/core @babel/preset-env @babel/preset-react -D
+$ yarn add __ -D
+```
+
+#### React
+```cmd
+$ yarn add react
+$ yarn add react-dom //Render the react elements
+```
+* App
+Onde são criados os componentes
+
+```jsx
+import './styles/global.scss'
+
+export function App() {
+    //throw new Error("O forninho caiu!");
+    return <h1>Hello World</h1>
+}
+```
+
+* Index
+Arquivo de execução principal
+
+```jsx
+import { render } from 'react-dom';
+import { App } from './App';
+render(<App />, document.getElementById('root'))
 ```
 
  ### Babel
