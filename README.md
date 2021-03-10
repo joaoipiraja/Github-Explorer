@@ -3,7 +3,7 @@
 - [x] Configurando ambiente ⚙️
 - [x] Conceitos Importantes 📘
 - [x] Chamadas HTTP 🗣
-- [ ] Usando Typescript 📘
+- [x] Usando Typescript 📘
 - [ ] Finalizando aplicação 🚚
 
 ## Preparing environment
