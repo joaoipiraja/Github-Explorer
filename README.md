@@ -4,7 +4,7 @@
 - [x] Conceitos Importantes 📘
 - [x] Chamadas HTTP 🗣
 - [x] Usando Typescript 📘
-- [ ] Finalizando aplicação 🚚
+- [x] Finalizando aplicação 🚚
 
 ## Preparing environment
 ```cmd
