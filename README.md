@@ -2,7 +2,7 @@
 
 - [x] Configurando ambiente ⚙️
 - [x] Conceitos Importantes 📘
-- [ ] Chamadas HTTP 🗣
+- [x] Chamadas HTTP 🗣
 - [ ] Usando Typescript 📘
 - [ ] Finalizando aplicação 🚚
 
