@@ -169,3 +169,12 @@ module.exports = {
  $ yarn dev 
  $ yarn build
  ```
+ ## Typescript
+ * Static Type Checking
+ ```cmd
+ $ yarn add typescript -D  
+ $ yarn add @babel/preset-typescript -D //faz com que o babel entenda typescript
+ $ yarn yarn tsc --init
+ $ yarn add @types/react-dom -D //adapta a tipagem do typescript
+ ```
+
