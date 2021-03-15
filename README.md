@@ -11,7 +11,7 @@
 $ yarn init -y
 ```
 
-#### 📂 Folders:   
+### 📂 Folders:   
     .    
     ├── dist             
     ├── node_modules                   
@@ -29,7 +29,7 @@ $ yarn init -y
       ├── babel.config.js
       └── webpack.config.js
 
-#### Node Modules
+### Node Modules
 * Normais
  ```cmd
 $ yarn add __
@@ -39,7 +39,7 @@ $ yarn add __
 $ yarn add __ -D
 ```
 
-#### React
+### React
 ```cmd
 $ yarn add react
 $ yarn add react-dom //Render the react elements
@@ -79,7 +79,7 @@ render(<App />, document.getElementById('root'))
     ]
  }
  ```
- ### Executar
+ #### Executar
  ```cmd
  yarn babel src/index.js --out-file dist/bundle.js
  ```
@@ -147,7 +147,7 @@ module.exports = {
     }
 };
 ```
-### Executar
+#### Executar
  * Cria um atalho no package json
  ```json
  {
@@ -169,7 +169,7 @@ module.exports = {
  $ yarn dev 
  $ yarn build
  ```
- ## Typescript
+ ### Typescript
  * Static Type Checking
  ```cmd
  $ yarn add typescript -D  
